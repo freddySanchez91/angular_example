@@ -1,0 +1,29 @@
+<div>
+    <table border="1">
+        <thead>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido Paterno</th>
+            <th>Apellido Materno</th>
+            <th>Edad</th>
+            <th colspan="2"> Acciones </th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users" >
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.lastName}}</td>
+                <td>{{user.surname}}</td>
+                <td>{{user.age}}</td>
+
+                <td>
+                    <button routerLink="/userDetail/{{user.id}}">Editar</button>
+                </td>
+                <td>
+                    <button (click)="delete(user)" >Borrar</button>                    
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>            
+

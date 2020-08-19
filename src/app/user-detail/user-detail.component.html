@@ -1,0 +1,21 @@
+
+<div class="card">
+    <img src="assets/images/img_avatar.png" alt="Avatar" style="width:100%; align-content: center;"  />
+    
+    <div class="container">
+      <h4><b>{{user.name}}</b></h4> 
+      <p>{{user.lastName}}  {{user.surname}}</p> 
+      <button (click) ="edit()">Editar</button>
+    </div>
+
+    <div *ngIf="isEditing">
+        <input [(ngModel)] = "user.name"  placeholder="Nombre"> <br>
+        <input [(ngModel)] = "user.lastName"  placeholder="Apellido Paterno"> <br>
+        <input [(ngModel)] = "user.surname"  placeholder="Apellido Materno"> <br>
+        <input [(ngModel)] = "user.age"  type="number" placeholder="Edad"> <br>
+
+        <button (click) ="update()">Actualizar</button>
+   
+    </div>
+
+  </div>
